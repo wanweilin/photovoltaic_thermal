@@ -1,0 +1,36 @@
+model_paras:
+  spatial_size: 256
+  img_channels: 1
+
+device: cuda:2
+dataset_base_dir: /root/test/wwl/datasets
+dataset_name: photovoltaic_thermal
+exp_name: unet_demo_3
+ckpt_root: ./ckpt
+log_root: ./log
+eval_root: ./eval
+model_savename: model.pth
+
+# num of iterations to log
+logevery: 100
+
+# num of epoch to save models
+saveevery: 1
+
+# training setting
+pretrained: False
+num_epochs: 80
+batchsize: 8
+lr: 0.0001
+num_workers: 8
+gamma: 0.2
+mile_stones: [40]
+
+# lambda bce loss
+lam_bce: 1.0
+# lambda iou loss
+lam_iou: 1.0
+# lambda ssim loss
+lam_ssim: 1.0
+# lambda dice loss
+lam_dice: 1.0
